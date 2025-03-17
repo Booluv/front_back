@@ -80,6 +80,7 @@ def masking_face(request):
             print("🚨 [ERROR] 이미지 저장 실패! 경로:", result_path)
             return JsonResponse({"message": "이미지 저장 실패!"}, status=500)
 
+        print(f"📌 [DEBUG] 반환할 image_url: /media/{result_filename}")
         return JsonResponse({"message": "마스킹 완료", "image_url": f"/media/{result_filename}"})
 
     except Exception as e:
